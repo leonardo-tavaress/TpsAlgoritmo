@@ -306,7 +306,7 @@ function l2ex3(){
 	}else{
 		pResposta.innerHTML = "";
 		pErro.style = "display: block";
-		pErro.innerHTML = "Digite um número maior que zero.";
+		pErro.innerHTML = "Digite um número válido.";
 	}
 }
 
@@ -388,12 +388,17 @@ function l2ex4(){
 function l2ex5(){
 	var n = Number(document.all['entradaFatorial'].value);
 	var pResposta = document.all['saidaFatorial'];
-	var fat = n;
 
-	for(var i = (n-1); i > 1;i--){
-		fat *=i;
+	if(n >= 1){
+		var fat = n;
+		for(var i = (n-1); i > 1;i--){
+			fat *=i;
+		}
+		pResposta.innerHTML = "Resposta: "+fat;
+	}else{
+		pResposta.innerHTML = "Digite um número válido.";
 	}
-	pResposta.innerHTML = "Resposta: "+fat;
+	
 }
 
 var numL3EX1 = [];
